@@ -1,0 +1,27 @@
+body
+{
+    background-color: antiquewhite;
+}
+
+h1
+{
+    color: darkslateblue;
+}
+
+.color-list
+{
+    color: darkolivegreen;
+    list-style-image: url('../ico/star.ico');
+}
+
+#geo
+{
+    list-style-type: georgian;
+}
+
+/* li inherits ol */
+ol > li
+{
+    color: darkcyan;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
