@@ -1,0 +1,42 @@
+.container-list
+{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+.list-main
+{
+    list-style-type: upper-roman;
+}
+
+.list-secondary
+{
+    list-style-type: lower-latin;
+    color: black;
+}
+
+.list-orange-marker
+{
+    list-style-image: url("images/orange_marker.png");
+}
+
+.list-red-marker
+{
+    list-style-image: url("images/red_marker.png");
+}
+
+.list-green-check
+{
+    list-style-image: url("images/green_marker.png");
+}
+
+.list-blue-check
+{
+    list-style-image: url("images/blue_marker.png");
+}
+
+.list-x
+{
+    list-style-image: url("images/black_marker.png");
+}
