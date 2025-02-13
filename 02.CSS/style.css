@@ -1,0 +1,49 @@
+body
+{
+    background-color: rgb(245, 240, 232);
+    font-family: "Roboto", sans-serif;
+}
+
+a
+{
+    font-weight: bolder;
+}
+
+a:link
+{
+    color: rgb(80, 54, 92);
+
+}
+
+a:visited
+{
+    color: rgb(143, 100, 156);
+}
+
+h1, h2, h3, h4
+{
+    text-decoration: underline;
+}
+
+.container
+{
+    text-align: justify;
+}
+
+.container-image
+{
+    text-align: center;
+}
+
+div.table td, th
+{
+    padding: 5px;
+    border: solid, 2px, black;
+}
+
+.table-header
+{
+    background-color: thistle;
+    text-align: center;
+    border-color: rgb(245, 240, 232);
+}
