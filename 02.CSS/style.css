@@ -23,6 +23,7 @@ a:visited
 h1, h2, h3, h4
 {
     color: rgb(22, 16, 27);
+    text-shadow: 0 -1px 3px #ff000050, 0 1px 3px #0000ff41;
 }
 
 /* blockquote::before
@@ -65,6 +66,7 @@ h1, h2, h3, h4
 {
     background-color: rgb(203, 191, 216);
     padding: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(23, 16, 31, 0.116);
 }
 
 .cpu-table table
@@ -92,4 +94,9 @@ h1, h2, h3, h4
 {
     background-color: rgb(245, 240, 232);
     border-color: rgb(203, 191, 216);
+}
+
+table tr:hover td
+{
+    background-color: rgb(236, 224, 234);
 }
