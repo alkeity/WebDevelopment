@@ -32,10 +32,6 @@ h1
     border-spacing: 0;
     border-collapse: collapse;
     border-style: hidden !important;
-}
-
-.container-table table, .container-table th, .container-table td
-{
     border: 2px solid rgb(235, 235, 235);
     background-color: rgb(211, 207, 202);
 }
@@ -43,6 +39,7 @@ h1
 .container-table th, .container-table td
 {
     width: 9%;
+    border: 2px solid rgb(235, 235, 235);
 }
 
 .container-table td
@@ -55,53 +52,147 @@ h1
     width: 5% !important;
 }
 
-
 .metal-alkali
 {
-    background-color: rgb(231, 131, 189) !important;
+    background-color: rgb(231, 131, 189);
 }
 
 .metal-alkaline
 {
-    background-color: rgb(117, 177, 225) !important;
+    background-color: rgb(117, 177, 225);
 }
 
 .metal-transition
 {
-    background-color: rgb(245, 147, 155) !important;
+    background-color: rgb(245, 147, 155);
 }
 
 .metal-post-transition
 {
-    background-color: rgb(187, 168, 219) !important;
+    background-color: rgb(187, 168, 219);
 }
 
 .nonmetal-other
 {
-    background-color: rgb(130, 193, 162) !important;
+    background-color: rgb(130, 193, 162);
 }
 
 .metalloid
 {
-    background-color: rgb(240, 181, 136) !important;
+    background-color: rgb(240, 181, 136);
 }
 
 .halogen
 {
-    background-color: rgb(147, 201, 228) !important;
+    background-color: rgb(147, 201, 228);
 }
 
 .noble-gas
 {
-    background-color: rgb(163, 202, 121) !important;
+    background-color: rgb(163, 202, 121);
 }
 
 .lanthanide
 {
-    background-color: rgb(245, 201, 117) !important;
+    background-color: rgb(245, 201, 117);
 }
 
 .actinide
 {
-    background-color: rgb(179, 174, 158) !important;
+    background-color: rgb(179, 174, 158);
+}
+
+.container-table:has(.metal-alkali:hover) .metal-alkaline,
+.container-table:has(.metal-alkali:hover) .metal-transition,
+.container-table:has(.metal-alkali:hover) .metal-post-transition,
+.container-table:has(.metal-alkali:hover) .nonmetal-other,
+.container-table:has(.metal-alkali:hover) .metalloid,
+.container-table:has(.metal-alkali:hover) .halogen,
+.container-table:has(.metal-alkali:hover) .noble-gas,
+.container-table:has(.metal-alkali:hover) .lanthanide,
+.container-table:has(.metal-alkali:hover) .actinide,
+.container-table:has(.metal-alkaline:hover) .metal-alkali,
+.container-table:has(.metal-alkaline:hover) .metal-transition,
+.container-table:has(.metal-alkaline:hover) .metal-post-transition,
+.container-table:has(.metal-alkaline:hover) .nonmetal-other,
+.container-table:has(.metal-alkaline:hover) .metalloid,
+.container-table:has(.metal-alkaline:hover) .halogen,
+.container-table:has(.metal-alkaline:hover) .noble-gas,
+.container-table:has(.metal-alkaline:hover) .lanthanide,
+.container-table:has(.metal-alkaline:hover) .actinide,
+.container-table:has(.metal-transition:hover) .metal-alkali,
+.container-table:has(.metal-transition:hover) .metal-alkaline,
+.container-table:has(.metal-transition:hover) .metal-post-transition,
+.container-table:has(.metal-transition:hover) .nonmetal-other,
+.container-table:has(.metal-transition:hover) .metalloid,
+.container-table:has(.metal-transition:hover) .halogen,
+.container-table:has(.metal-transition:hover) .noble-gas,
+.container-table:has(.metal-transition:hover) .lanthanide,
+.container-table:has(.metal-transition:hover) .actinide,
+.container-table:has(.metal-post-transition:hover) .metal-alkali,
+.container-table:has(.metal-post-transition:hover) .metal-alkaline,
+.container-table:has(.metal-post-transition:hover) .metal-transition,
+.container-table:has(.metal-post-transition:hover) .nonmetal-other,
+.container-table:has(.metal-post-transition:hover) .metalloid,
+.container-table:has(.metal-post-transition:hover) .halogen,
+.container-table:has(.metal-post-transition:hover) .noble-gas,
+.container-table:has(.metal-post-transition:hover) .lanthanide,
+.container-table:has(.metal-post-transition:hover) .actinide,
+.container-table:has(.nonmetal-other:hover) .metal-alkali,
+.container-table:has(.nonmetal-other:hover) .metal-alkaline,
+.container-table:has(.nonmetal-other:hover) .metal-transition,
+.container-table:has(.nonmetal-other:hover) .metal-post-transition,
+.container-table:has(.nonmetal-other:hover) .metalloid,
+.container-table:has(.nonmetal-other:hover) .halogen,
+.container-table:has(.nonmetal-other:hover) .noble-gas,
+.container-table:has(.nonmetal-other:hover) .lanthanide,
+.container-table:has(.nonmetal-other:hover) .actinide,
+.container-table:has(.metalloid:hover) .metal-alkali,
+.container-table:has(.metalloid:hover) .metal-alkaline,
+.container-table:has(.metalloid:hover) .metal-transition,
+.container-table:has(.metalloid:hover) .metal-post-transition,
+.container-table:has(.metalloid:hover) .nonmetal-other,
+.container-table:has(.metalloid:hover) .halogen,
+.container-table:has(.metalloid:hover) .noble-gas,
+.container-table:has(.metalloid:hover) .lanthanide,
+.container-table:has(.metalloid:hover) .actinide,
+.container-table:has(.halogen:hover) .metal-alkali,
+.container-table:has(.halogen:hover) .metal-alkaline,
+.container-table:has(.halogen:hover) .metal-transition,
+.container-table:has(.halogen:hover) .metal-post-transition,
+.container-table:has(.halogen:hover) .nonmetal-other,
+.container-table:has(.halogen:hover) .metalloid,
+.container-table:has(.halogen:hover) .noble-gas,
+.container-table:has(.halogen:hover) .lanthanide,
+.container-table:has(.halogen:hover) .actinide,
+.container-table:has(.noble-gas:hover) .metal-alkali,
+.container-table:has(.noble-gas:hover) .metal-alkaline,
+.container-table:has(.noble-gas:hover) .metal-transition,
+.container-table:has(.noble-gas:hover) .metal-post-transition,
+.container-table:has(.noble-gas:hover) .nonmetal-other,
+.container-table:has(.noble-gas:hover) .metalloid,
+.container-table:has(.noble-gas:hover) .halogen,
+.container-table:has(.noble-gas:hover) .lanthanide,
+.container-table:has(.noble-gas:hover) .actinide,
+.container-table:has(.lanthanide:hover) .metal-alkali,
+.container-table:has(.lanthanide:hover) .metal-alkaline,
+.container-table:has(.lanthanide:hover) .metal-transition,
+.container-table:has(.lanthanide:hover) .metal-post-transition,
+.container-table:has(.lanthanide:hover) .nonmetal-other,
+.container-table:has(.lanthanide:hover) .metalloid,
+.container-table:has(.lanthanide:hover) .halogen,
+.container-table:has(.lanthanide:hover) .noble-gas,
+.container-table:has(.lanthanide:hover) .actinide,
+.container-table:has(.actinide:hover) .metal-alkali,
+.container-table:has(.actinide:hover) .metal-alkaline,
+.container-table:has(.actinide:hover) .metal-transition,
+.container-table:has(.actinide:hover) .metal-post-transition,
+.container-table:has(.actinide:hover) .nonmetal-other,
+.container-table:has(.actinide:hover) .metalloid,
+.container-table:has(.actinide:hover) .halogen,
+.container-table:has(.actinide:hover) .noble-gas,
+.container-table:has(.actinide:hover) .lanthanide
+{
+    background-color: rgb(211, 207, 202);
+    color: rgba(0, 0, 0, 0.459);
 }
