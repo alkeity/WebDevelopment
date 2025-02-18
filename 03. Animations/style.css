@@ -1,0 +1,105 @@
+@keyframes bg-animation
+{
+    from
+    {
+        color: thistle;
+    }
+    to
+    {
+        color: aquamarine;
+    }
+}
+
+@keyframes caramelldancen
+{
+    0% {background-color: red;}
+    20% {background-color: orange;}
+    40% {background-color: yellow}
+    60% {background-color: greenyellow}
+    70% {background-color: cyan}
+    100% {background-color: violet;}
+}
+
+@keyframes gradients
+{
+    from
+    {
+        margin-left: 0;
+        margin-top: 0;
+    }
+    to
+    {
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+}
+
+@keyframes btn
+{
+    from
+    {
+        border: outset 10px;
+    }
+    to
+    {
+        border: inset 10px;
+    }
+}
+
+h1
+{
+    animation-name: bg-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.test
+{
+    width: 100px;
+    height: 100px;
+    animation-name: caramelldancen;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.test2
+{
+    background-color: violet;
+    width: 50px;
+    height: 50px;
+    animation-name: gradients;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.button
+{
+    border: outset 10px;
+    width: 100px;
+    height: 50px;
+}
+
+.button:active
+{
+    border: inset 10px;
+    width: 100px;
+    height: 50px;
+}
+
+.self-pressing-button
+{
+    text-align: center;
+    border: outset 10px;
+    width: 100px;
+    height: 50px;
+    animation-name: btn;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
