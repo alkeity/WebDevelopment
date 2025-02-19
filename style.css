@@ -1,0 +1,17 @@
+body
+{
+    background-color: rgb(245, 240, 232);
+    font-family: "Roboto", sans-serif;
+}
+
+h1
+{
+    text-align: center;
+}
+
+.container
+{
+    margin: auto;
+    width: 50%;
+    font-size: larger;
+}
