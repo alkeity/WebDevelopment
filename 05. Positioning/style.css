@@ -1,0 +1,32 @@
+body
+{
+    margin: 0;
+    background-color: beige;
+}
+
+header
+{
+    margin-top: 10px;
+    background-color: inherit;
+    border: 1px hidden;
+    height: 80px;
+}
+
+header img
+{
+    position: relative;
+    width: 100px;
+    height: auto;
+    float: left;
+}
+
+.container
+{
+    margin: auto;
+    width: 60%;
+}
+
+.body
+{
+    position: relative;
+}

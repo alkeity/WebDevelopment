@@ -1,0 +1,48 @@
+html
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0;
+    background-color: #1c202c;
+    height: 100%;
+}
+
+.container
+{
+    margin: auto;
+    width: 60%;
+    height: 100vh;
+    background-color: #bfc0d1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header
+{
+    display: block;
+    width: 100%;
+}
+
+h1
+{
+    text-align: center;
+}
+
+.body
+{
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.square
+{
+    width: 100px;
+    height: 100px;
+    background-color: #60519b;
+}

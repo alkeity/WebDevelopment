@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Forms</title>
 </head>
 
@@ -12,7 +13,7 @@
       <h1>Forms</h1>
     </header>
     <div class="container-form">
-      <form action="" method="GET">
+      <form action="" method="POST">
         <div>
           <label for="first-name">Name:</label>
           <input type="text" placeholder="Введите Ваше имя" name="first_name" id="first-name" minlength="3" maxlength="25" required>
@@ -22,10 +23,118 @@
           <input type="email" name="email" id="email" minlength="5" maxlength="25" required>
         </div>
         <div>
+          <label for="phone">E-mail:</label>
+          <input type="tel" name="phone" id="phone" minlength="11" maxlength="11" required>
+        </div>
+        <div>
           <label for="passw">Password:</label>
           <input type="password" name="password" id="passw" minlength="3" maxlength="25" required>
         </div>
+        <div>
+          <label for="about">Пару слов о себе:</label>
+          <br>
+          <textarea name="about" id="about"></textarea>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Какие языки вы знаете?</legend>
+            <div>
+              <input type="checkbox" name="rus" id="rus">
+              <label for="rus">Русский</label>
+            </div>
+            <div>
+            <input type="checkbox" name="eng" id="eng">
+            <label for="eng">Английский</label>
+            </div>
+            <div>
+            <input type="checkbox" name="ger" id="ger">
+            <label for="ger">Немецкий</label>
+            </div>
+            <div>
+            <input type="checkbox" name="ita" id="ita">
+            <label for="ita">Итальянский</label>
+            </div>
+            <div>
+            <input type="checkbox" name="spa" id="spa">
+            <label for="spa">Испанский</label>
+            </div>
+            <div>
+            <input type="checkbox" name="chi" id="chi">
+            <label for="chi">Китайский</label>
+            </div>
+            <div>
+            <input type="checkbox" name="iri" id="iri">
+            <label for="iri">Ирландский</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Выберите форму обучения:</legend>
+            <div>
+              <input type="radio" name="learning-form" id="fulltime" value="fulltime">
+              <label for="fulltime">Стационар</label>
+            </div>
+            <div>
+              <input type="radio" name="learning-form" id="parttime" value="parttime">
+              <label for="fulltime">Полустационар</label>
+            </div>
+            <div>
+              <input type="radio" name="learning-form" id="annual" value="annual">
+              <label for="fulltime">Годичные курсы</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <label for="direction">Выберите направление обучения:</label>
+          <br>
+          <select name="direction" id="direction">
+            <option value="programming">РПО</option>
+            <option value="net">Сети</option>
+            <option value="graphic">Графика</option>
+            <option value="frontend">Верстка</option>
+            <option value="gamedev">Геймдев</option>
+            <option value="webdev">Веб-разработка</option>
+            <option value="java">Java</option>
+            <option value="mobile">Разработка для мобильных устройств</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="weekdays">Выберите дни обучения:</label>
+          <br>
+          <select name="weekdays" id="weekdays" multiple>
+            <option value="mon">Понедельник</option>
+            <option value="tue">Вторник</option>
+            <option value="wed">Среда</option>
+            <option value="thu">Четверг</option>
+            <option value="fri">Пятница</option>
+            <option value="sat">Суббота</option>
+            <option value="sun">Воскресенье</option>
+          </select>
+        </div>
       </form>
+
+      <div class="feesh">
+        Lorem ipsum odor amet, consectetuer adipiscing elit. Donec gravida feugiat metus proin in feugiat in. 
+        Mi vehicula id fringilla justo cubilia; penatibus conubia ultrices porttitor. Bibendum suspendisse consectetur aenean conubia condimentum accumsan. 
+        Aenean ipsum finibus bibendum urna luctus magnis, imperdiet integer blandit. Id sociosqu eget et per vehicula mus nisi interdum. Malesuada tempus ridiculus 
+        dapibus sem mus donec. Consectetur curae rutrum tempor risus quis in maecenas.
+        <br>Primis rutrum vel habitasse mattis mus netus varius est in. Semper rutrum eleifend posuere sit est posuere vivamus finibus. Non et volutpat fermentum; 
+        congue quis ultricies pharetra. Tempor interdum est nisi magnis placerat quam pharetra proin ante. Varius justo consequat sagittis amet ultricies. 
+        Massa auctor mauris sem habitant pharetra litora.
+        <br>Euismod sapien netus quam fusce mi. Laoreet congue dictumst velit pretium scelerisque pulvinar. Sem ultrices volutpat morbi hac tempus nibh. 
+        Sed non inceptos efficitur sollicitudin et. Quam nisl cubilia varius blandit, nullam in. Semper ac cursus curae ad; dolor erat faucibus tempus.
+        <br>Ad ac pulvinar varius taciti facilisi natoque rutrum dis. Ultricies magnis natoque, vel habitant nec neque nostra. Nam dictum et maximus lacinia nisi 
+        volutpat ultrices hendrerit. Curae quis placerat id natoque diam dis. Dui curabitur turpis elementum massa conubia sit donec. Auctor non taciti nulla tellus 
+        ad hendrerit mattis. Inceptos ultricies per elementum ipsum per penatibus metus mauris. Rutrum volutpat sapien interdum tristique pellentesque sagittis.
+        <br>Fringilla ante eget cras non risus. Consequat maximus phasellus curabitur sem est. Rutrum fames feugiat ridiculus nisi sollicitudin turpis torquent lacus. 
+        Blandit leo facilisi facilisi dignissim nascetur et mattis euismod. Mauris vivamus fringilla consectetur efficitur maecenas; quam ridiculus himenaeos dui. 
+        Consectetur habitasse vestibulum aliquam; duis finibus in nibh dui. Suspendisse cursus venenatis ultricies; lacinia elementum vivamus.
+      </div>
     </div>
   </div>
 </body>
