@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JS</title>
+
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Introduction to JavaScript</h1>
+        </header>
+    </div>
+
+    <script>
+        // alert('Hello JS');
+        var something = prompt('Enter something:');
+        // confirm('Are you sure you wanna continue?');
+        // alert('Hello, ' + prompt('What\'s your name?') + '!');
+        // console.log('Hello, console!');
+        // var name = prompt('What\'s your name?');
+        // document.write('<p>Hello, ' + name + '!</p>');
+        // document.write(`<p>Hello, ${name}!</p>`);
+
+        document.write('<p>');
+        for (var index = 0; index < 10; index++)
+        {
+            document.write(`${index} `);
+        }
+        document.write('</p><p>');
+        for (; index < 20; index++)
+        {
+            document.write(`${index} `);
+        }
+        document.write('</p>');
+        document.write(`<p>typeof(index): ${typeof(index)}</p>`);
+        document.write(`<p>typeof(something): ${typeof(something)}</p>`);
+
+        </script>
+</body>
+</html>

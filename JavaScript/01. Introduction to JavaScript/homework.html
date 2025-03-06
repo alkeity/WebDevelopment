@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Introduction homework</title>
+
+  <style>
+    .container
+    {
+      margin: auto;
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="power()">Power</button>
+    <button onclick="fibonacci()">Fibonacci</button>
+  </div>
+  
+  <script>
+    function factorial()
+    {
+      let number = prompt('Enter number:');
+      number = Number(number);
+      let result = 1;
+
+      for (let index = 1; index <= number; index++)
+      {
+        result *= index;
+      }
+      document.write(`Factorial of number ${number} is ${result}`);
+    }
+
+    function power()
+    {
+      let number = prompt('Enter number:');
+      number = Number(number);
+      let power = prompt('Enter power:');
+      power = Number(power);
+      let result = 1;
+
+      for (let index = 0; index < power; index++)
+      {
+        result *= number;
+      }
+      document.write(`${number}<sup>${power}</sup> = ${result}`);
+    }
+
+    function fibonacci()
+    {
+      let number = prompt('Enter number:');
+      number = Number(number);
+
+      let fib1 = 0;
+      let fib2 = 1;
+      let sum;
+
+      for (let index = 0; fib2 <= number; index++)
+      {
+        if (index > 0)
+        {
+          document.write(fib2 + ' ');
+
+          sum = fib1 + fib2;
+          fib1 = fib2;
+          fib2 = sum;
+        }
+        else
+        {
+          document.write(0 + ' ');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
