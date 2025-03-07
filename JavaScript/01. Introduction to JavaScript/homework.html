@@ -15,13 +15,15 @@
 </head>
 
 <body>
-  <div class="container">
-    <button onclick="factorial()">Factorial</button>
-    <button onclick="power()">Power</button>
-    <button onclick="fibonacci()">Fibonacci</button>
-  </div>
-  
   <script>
+
+    function printButtons()
+    {
+      document.write(
+        '<button onclick="factorial()">Factorial</button> <button onclick="power()">Power</button> <button onclick="fibonacci()">Fibonacci</button><br>'
+      );
+    }
+
     function factorial()
     {
       let number = prompt('Enter number:');
@@ -32,7 +34,8 @@
       {
         result *= index;
       }
-      document.write(`Factorial of number ${number} is ${result}`);
+      document.write(`Factorial of number ${number} is ${result}<br>`);
+      printButtons();
     }
 
     function power()
@@ -47,7 +50,8 @@
       {
         result *= number;
       }
-      document.write(`${number}<sup>${power}</sup> = ${result}`);
+      document.write(`${number}<sup>${power}</sup> = ${result}<br>`);
+      printButtons();
     }
 
     function fibonacci()
@@ -74,7 +78,11 @@
           document.write(0 + ' ');
         }
       }
+      document.write('<br>');
+      printButtons();
     }
+
+    printButtons();
   </script>
 </body>
 </html>
