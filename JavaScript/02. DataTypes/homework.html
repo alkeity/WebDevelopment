@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DThw</title>
+</head>
+
+<body>
+  <div>
+    <button onclick="doArrayStuff(true)">Generate unique array</button>
+    <button onclick="doArrayStuff(false)">Generate non-unique array</button>
+  </div>
+  <div id="result"></div>
+
+  <script>
+    function print(text)
+    {
+      document.getElementById('result').innerHTML += `<p>${text}</p>`;
+    }
+
+    function justArrayThings(array)
+    {
+      let sum = array.reduce((num1, num2) => num1 + num2, 0);
+      let mean = sum / array.length;
+      let min = Math.min(...array);
+      let max = Math.max(...array);
+      let sorted = array;
+      sorted.sort(function(a, b){return a - b});
+
+      print(
+        `Array info:<br>
+        Sorted array: ${sorted.toString()}<br>
+        Sum: ${sum}<br>
+        Mean: ${mean}<br>
+        Min value: ${min}<br>
+        Max value: ${max}`
+      );
+    }
+
+    function generateArray(length, max, min, unique)
+    {
+      let array = [];
+      let rNum;
+
+      while (array.length < length)
+      {
+        rNum = Math.floor(Math.random() * (max - min + 1) + min);
+        if (unique == false || (unique == true && array.includes(rNum) == false))
+        {
+          array.push(rNum);
+        }
+      }
+
+      return array;
+    }
+
+    function findRepeats(array)
+    {
+      let repeats = [];
+      for (let i = 1; i < array.length; i++)
+      {
+        if (array.slice(0, i).includes(array[i]) == true && repeats.includes(array[i]) == false)
+        {
+          repeats.push(array[i]);
+        }
+      }
+
+      return repeats;
+    }
+
+    function doArrayStuff(unique)
+    {
+      let array = generateArray(10, 30, 20, unique);
+      print(`Generated array: ${array.toString()}`);
+
+      justArrayThings(array);
+
+      if (unique == false)
+      {
+        print(`Repeats: ${findRepeats(array).toString()}`);
+      }
+      print("<br>");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTypes</title>
+</head>
+
+<body>
+  <script>
+    function factorial()
+    {
+      let num = prompt("Enter number:");
+      let factorial = BigInt(1);
+      for (let index = 1; index <= num; index++)
+      {
+        factorial *= BigInt(index);
+        document.write(`${index}! = ${factorial}<br>`);
+      }
+      document.write(`<h3>${num}! = ${factorial}</h3>`);
+    }
+
+    function fibonacci()
+    {
+      let num = prompt("Enter number:");
+
+      for (let f1 = BigInt(0), f2 = BigInt(1), sum = f1 + f2, i = 0; i < num; sum = (f1 = f2) + (f2 = sum), i++)
+      {
+        document.writeln(`${i} = ${f1}<br>`);
+      }
+    }
+
+    
+  </script>
+</body>
+</html>
