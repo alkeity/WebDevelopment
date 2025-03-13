@@ -18,49 +18,113 @@
 			</header>
 			<div class="calc">
 				<div class="container-menu"></div>
-				<div class="calc-input"></div>
+				<div id="calc-input"></div>
 				<div class="container-buttons">
 					<div class="container-calc-buttons">
 						<div class="random-square"></div>
-						<button class="calc-button calc-button-red calc-button-long">Backspace</button>
+						<button class="calc-button calc-button-red calc-button-long" id="backspace" onclick="pressButton(event)">Backspace</button>
 						<button class="calc-button calc-button-red calc-button-long">CE</button>
-						<button class="calc-button calc-button-red calc-button-long">C</button>
+						<button class="calc-button calc-button-red calc-button-long" id="clear" onclick="pressButton(event)">C</button>
 					</div>
 					<div class="container-calc-buttons">
 						<button class="calc-button calc-button-red calc-button-side">MC</button>
-						<button class="calc-button">7</button>
-						<button class="calc-button">8</button>
-						<button class="calc-button">9</button>
-						<button class="calc-button calc-button-red">/</button>
+						<button class="calc-button" id="7" onclick="pressButton(event)">7</button>
+						<button class="calc-button" id="8" onclick="pressButton(event)">8</button>
+						<button class="calc-button" id="9" onclick="pressButton(event)">9</button>
+						<button class="calc-button calc-button-red" id="/" onclick="pressButton(event)">/</button>
 						<button class="calc-button">sqrt</button>
 					</div>
 					<div class="container-calc-buttons">
 						<button class="calc-button calc-button-red calc-button-side">MR</button>
-						<button class="calc-button">4</button>
-						<button class="calc-button">5</button>
-						<button class="calc-button">6</button>
-						<button class="calc-button calc-button-red">*</button>
-						<button class="calc-button">%</button>
+						<button class="calc-button" id="4" onclick="pressButton(event)">4</button>
+						<button class="calc-button" id="5" onclick="pressButton(event)">5</button>
+						<button class="calc-button" id="6" onclick="pressButton(event)">6</button>
+						<button class="calc-button calc-button-red" id="*" onclick="pressButton(event)">*</button>
+						<button class="calc-button" id="%" onclick="pressButton(event)">%</button>
 					</div>
 					<div class="container-calc-buttons">
 						<button class="calc-button calc-button-red calc-button-side">MS</button>
-						<button class="calc-button">1</button>
-						<button class="calc-button">2</button>
-						<button class="calc-button">3</button>
-						<button class="calc-button calc-button-red">-</button>
+						<button class="calc-button" id="1" onclick="pressButton(event)">1</button>
+						<button class="calc-button" id="2" onclick="pressButton(event)">2</button>
+						<button class="calc-button" id="3" onclick="pressButton(event)">3</button>
+						<button class="calc-button calc-button-red" id="-" onclick="pressButton(event)">-</button>
 						<button class="calc-button">1/x</button>
 					</div>
 					<div class="container-calc-buttons">
 						<button class="calc-button calc-button-red calc-button-side">M+</button>
-						<button class="calc-button">0</button>
+						<button class="calc-button" id="0" onclick="pressButton(event)">0</button>
 						<button class="calc-button">+/-</button>
-						<button class="calc-button">.</button>
-						<button class="calc-button calc-button-red">+</button>
-						<button class="calc-button calc-button-red">=</button>
+						<button class="calc-button" id="." onclick="pressButton(event)">.</button>
+						<button class="calc-button calc-button-red" id="+" onclick="pressButton(event)">+</button>
+						<button class="calc-button calc-button-red" id="=" onclick="pressButton(event)">=</button>
 					</div>
 					</div>
 			</div>
 		</div>
 	</div>
+
+	<script>
+		const operations = "+-*/%";
+
+		function pressButton(event)
+		{
+			let calcInput = document.getElementById('calc-input');
+			let item = event.target.id;
+
+			switch (item)
+			{
+				case '+':
+				case '-':
+				case '*':
+				case '/':
+				case '%':
+					if (!operations.includes(calcInput.innerHTML.slice(-1)))
+					{
+						calcInput.innerHTML += item;
+					}
+					break;
+				case 'clear':
+					calcInput.innerHTML = '';
+					break;
+				case 'backspace':
+					calcInput.innerHTML = calcInput.innerHTML.slice(0, -1);
+					break;
+				case '=':
+					let vars = calcInput.innerHTML.split(/[+*/=%-]/gm);
+					let curOperations = calcInput.innerHTML.replace(/[\d.]/gm, '');
+
+					let result = Number(vars[0]);
+					vars.splice(0, 1);
+
+					for (let i = 0; i < curOperations.length; i++)
+					{
+						switch (curOperations[i])
+						{
+							case '+':
+								result += Number(vars[i]);
+								break;
+							case '-':
+								result -= Number(vars[i]);
+								break;
+							case '*':
+								result *= Number(vars[i]);
+								break;
+							case '/':
+								result /= Number(vars[i]);
+								break;
+							case '%':
+								result %= Number(vars[i]);
+								break;
+						}
+					}
+
+					calcInput.innerHTML = result;
+					break;
+				default:
+					calcInput.innerHTML += item;
+					break;
+			}
+		}
+	</script>
 </body>
 </html>

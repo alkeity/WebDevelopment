@@ -6,7 +6,7 @@ html
 body
 {
     margin: 0;
-    background-image: url('../../img/xp.jpg');
+    background-image: url('../../../img/xp.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -64,7 +64,7 @@ body
     border-bottom: 1px solid white;
 }
 
-.calc-input
+#calc-input
 {
     margin: auto;
     margin-top: 4px;
@@ -74,6 +74,9 @@ body
     height: 42px;
     background-color: white;
     border: 2px solid gray;
+
+    text-align: right;
+    font-size:xx-large;
 }
 
 .container-buttons
