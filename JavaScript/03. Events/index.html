@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=q, initial-scale=1.0">
+  <title>Events</title>
+</head>
+
+<body>
+  <input id="userInput" type="text">
+  <button onclick="showText()">Click!</button>
+
+  <input type="file" name="image" id="image" accept="image/*" onchange="showImage(event)">
+
+  <div id="output"></div>
+  <img id="outputImg" src="" width="100px" height="100px"/>
+
+
+  <script>
+    function showText()
+    {
+      let userInput = document.getElementById('userInput');
+      document.getElementById('output').innerHTML = `<p>${userInput.value}</p>`;
+    }
+
+    function showImage(event)
+    {
+      let outputImg = document.getElementById("outputImg");
+      let image = document.getElementById("image");
+      let path = image.value.split('\\');
+      let p = path[path.length - 1];
+      outputImg.src = p;
+    }
+  </script>
+</body>
+</html>
