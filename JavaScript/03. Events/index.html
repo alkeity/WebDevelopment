@@ -3,17 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=q, initial-scale=1.0">
-  <title>Events</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Events + DOM</title>
 </head>
 
-<body>
-  <input id="userInput" type="text">
-  <button onclick="showText()">Click!</button>
+<body id='body' class="theme-light">
+  <div class="container">
+    <header>
+      <h1>Events & DOM</h1>
+      <img id="change-theme" class="btn-img theme-light-img" src="../../img/light-dark.svg" alt="change theme" onclick="changeTheme()">
+    </header>
 
-  <input type="file" name="image" id="image" accept="image/*" onchange="showImage(event)">
+    <div>
+      <label for="delay">Set theme application delay (in seconds)</label>
+      <input type="number" name="delay" id="delay" min="0" max="5" value="1">
+      <button onclick="setDelay()">Ok</button>
+    </div>
+  
+    <div>
+      <input id="userInput" type="text">
+      <button onclick="showText()">Click!</button>
+      <div id="output"></div>
+  </div>
 
-  <div id="output"></div>
-  <img id="outputImg" src="" width="100px" height="100px"/>
+    <div>
+      <input type="file" name="image" id="image" accept="image/*" onchange="showImage(event)">
+    </div>  
+
+    <img id="outputImg" src="" width="100px" height="100px"/>
+  
+    <div id="DOM" style="width: 100px; height: 50px; border: 2px solid;"></div>
+  </div>
 
 
   <script>
@@ -30,6 +50,39 @@
       let path = image.value.split('\\');
       let p = path[path.length - 1];
       outputImg.src = p;
+    }
+
+    function changeTheme()
+    {
+      let body = document.getElementById('body');
+      let btn = document.getElementById('change-theme');
+
+      if (body.className == 'theme-light')
+      {
+        body.className = 'theme-dark';
+        btn.className = 'btn-img theme-dark-img';
+        btn.style.transform = "rotate(0deg)";
+      }
+      else
+      {
+        body.className = 'theme-light';
+        btn.className = 'btn-img theme-light-img';
+        btn.style.transform = "rotate(180deg)";
+      }
+    }
+
+    function setDelay()
+    {
+      let delay = document.getElementById("delay").value;
+      delay = Number(delay);
+
+      if (delay <= 10 && delay >= 0)
+      {
+        let body = document.getElementById('body');
+        let btn = document.getElementById('change-theme');
+        body.style.transition = `all ${delay}s`;
+        btn.style.transition = `all ${delay}s`;
+      }
     }
   </script>
 </body>
