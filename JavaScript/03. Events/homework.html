@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Events homework</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Number converter</h1>
+    </header>
+
+    <div class="numConverter">
+      <div>
+        <label for="numBinary">Enter binary number: </label>
+        <input type="number" name="numBinary" id="numBinary" oninput="convertBinaryToDecimal()">
+      </div>
+        <div>
+          <p id="resultNumber"></p> 
+        </div>
+    </div>
+
+    <div class="countdownTimer">
+      <div>
+        <label for="targetDate">Choose date:</label>
+        <input type="date" name="targetDate" id="targetDate">
+        <button onclick="countdownTimer()">Get countdown</button>
+      </div>
+
+      <div id="resultCountdown"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="events-hw.js"></script>
+</body>
+</html>
