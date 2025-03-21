@@ -28,8 +28,9 @@
     <div class="countdownTimer">
       <div>
         <label for="targetDate">Choose date:</label>
-        <input type="date" name="targetDate" id="targetDate">
-        <button onclick="countdownTimer()">Get countdown</button>
+        <input type="datetime-local" name="targetDate" id="targetDate">
+        <button onclick="countdownTimer()" id="btnStart">Get countdown</button>
+        <button onclick="countdownStop()" id="btnClear">Clear</button>
       </div>
 
       <div id="resultCountdown"></div>
