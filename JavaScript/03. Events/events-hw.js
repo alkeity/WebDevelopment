@@ -15,104 +15,71 @@ function convertBinaryToDecimal()
     document.getElementById('resultNumber').innerHTML = result;
 }
 
-var targetDate;
+var seconds = 0;
 var countdownID = null;
+var music = new Audio('../../sounds/AlegendImagination.mp3');
 
 function countdownTimer()
 {
     let targetDateElem = document.getElementById('targetDate');
 
     let curDate = new Date();
-    targetDate = new Date(targetDateElem.value);
-    //targetDate.setHours(targetDate.getHours() + Math.floor(curDate.getTimezoneOffset() / 60));
-    //targetDate = new Date(targetDate.toLocaleString("default", {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone}));
-    //targetDate = new Date(targetDate + curDate.getTimezoneOffset() * 60000);
+    let targetDate = new Date(targetDateElem.value);
 
-    console.log(`curDate: ${curDate.getHours()}:${curDate.getMinutes()}:${curDate.getSeconds()}:${curDate.getMilliseconds()}`);
-    console.log(`targetDate: ${targetDate.getHours()}:${targetDate.getMinutes()}:${targetDate.getSeconds()}:${targetDate.getMilliseconds()}`);
-    console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
-    console.log(curDate.getTimezoneOffset());
-
-    if (targetDate > curDate)
-    {
-        // targetDate = Date.UTC(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-        targetDateElem.disabled = true;
-        document.getElementById('btnStart').disabled = true;
-        countdownTick();
-    }
-    else
-    {
-     document.getElementById('resultCountdown').innerHTML = "No time travel allowed, sorry.";
-    }
-
+    targetDateElem.disabled = true;
+    document.getElementById('btnStart').disabled = true;
+    seconds = Math.trunc((targetDate - curDate) / 1000);
+    console.log(seconds);
+    countdownTick();
 }
 
 function countdownTick()
 {
-    let curDate = new Date();
-    // curDate = Date.UTC(
-    //                     curDate.getFullYear(), curDate.getMonth(), curDate.getDate(),
-    //                     curDate.getHours(), curDate.getMinutes(), curDate.getSeconds(),
-    //                     curDate.getMilliseconds()
-    //                 );
-    let seconds = Math.floor((targetDate - curDate) / 1000);
+    if (seconds == 0)
+    {
+        // Music track: Imagination by Alegend
+        // Source: https://freetouse.com/music
+        // Copyright Free Music (Free Download)
+        music.play();
+        countdownStop();
+        document.getElementById('btnStop').style.visibility = 'visible';
+        return;
+    }
 
     let years = 0;
     let months = 0;
     let days = 0;
     let hours = 0;
     let minutes = 0;
+    let secondsTmp = seconds > 0 ? seconds : -seconds;
 
-    if (seconds >= (60 * 60 * 24 * 30 * 12))
-    {
-        years = Math.floor(seconds / (60 * 60 * 24 * 30 * 12));
-        seconds -= years * (60 * 60 * 24 * 30 * 12);
-    }
+    years = Math.trunc(secondsTmp / (60 * 60 * 24 * 30 * 12));
+    secondsTmp -= years * (60 * 60 * 24 * 30 * 12);
 
-    if (seconds >= (60 * 60 * 24 * 30))
-    {
-        months = Math.floor(seconds / (60 * 60 * 24 * 30));
-        seconds -= months * (60 * 60 * 24 * 30);
-    }
+    months = Math.trunc(secondsTmp / (60 * 60 * 24 * 30));
+    secondsTmp -= months * (60 * 60 * 24 * 30);
 
-    if (seconds >= (60 * 60 * 24))
-    {
-        days = Math.floor(seconds / (60 * 60 * 24));
-        seconds -= days * (60 * 60 * 24);
-    }
+    days = Math.trunc(secondsTmp / 86400);
+    secondsTmp -= days * 86400;
 
-    if (seconds >= (60 * 60))
-    {
-        hours = Math.floor(seconds / (60 * 60));
-        seconds -= hours * (60 * 60);
-    }
+    hours = Math.trunc(secondsTmp / 3600);
+    secondsTmp -= hours * 3600;
 
-    if (seconds >= 60)
-    {
-        minutes = Math.floor(seconds / 60);
-        seconds -= minutes * 60;
-    }
+    minutes = Math.trunc(secondsTmp / 60);
+    secondsTmp -= minutes * 60;
 
     let resultStr = "";
 
-    if (years != 0)
-    {
-        resultStr += `<p>Years: ${years}</p>`;
-    }
+    if (years != 0) resultStr += `<p>Years: ${years}</p>`;
 
-    if (months != 0)
-    {
-        resultStr += `<p>Months: ${months}</p>`;
-    }
+    if (months != 0) resultStr += `<p>Months: ${months}</p>`;
 
-    if (days != 0)
-    {
-        resultStr += `<p>Days: ${days}</p>`;
-    }
+    if (days != 0) resultStr += `<p>Days: ${days}</p>`;
     
-    resultStr += `<p>Hours: ${hours}</p><p>Minutes: ${minutes}</p><p>Seconds: ${seconds}</p>`;
+    resultStr += `<p>Hours: ${hours}</p><p>Minutes: ${minutes}</p><p>Seconds: ${secondsTmp}</p>`;
 
     document.getElementById('resultCountdown').innerHTML = resultStr;
+    seconds--;
 
     countdownID = setTimeout(countdownTick, 1000);
 }
@@ -123,8 +90,16 @@ function countdownStop()
     {
         clearTimeout(countdownID);
         countdownID = null;
+        seconds = 0;
         document.getElementById('resultCountdown').innerHTML = "";
         document.getElementById('btnStart').disabled = false;
         document.getElementById('targetDate').disabled = false;
     }
+}
+
+function musicStop()
+{
+    music.pause();
+    music.currentTime = 0;
+    document.getElementById('btnStop').style.visibility = 'hidden';
 }
