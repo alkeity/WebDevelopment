@@ -70,18 +70,43 @@ function countdownTick()
 
     let resultStr = "";
 
-    if (years != 0) resultStr += `<p>Years: ${years}</p>`;
+    if (years != 0)
+    {
+        resultStr += `<p>Years: ${years}</p>`;
 
-    if (months != 0) resultStr += `<p>Months: ${months}</p>`;
+        setBlock('years', years);
+    }
 
-    if (days != 0) resultStr += `<p>Days: ${days}</p>`;
+    if (months != 0)
+    {
+        resultStr += `<p>Months: ${months}</p>`;
+
+        setBlock('months', months);
+    }
+
+    if (days != 0)
+    {
+        resultStr += `<p>Days: ${days}</p>`;
+
+        setBlock('days', days);
+    }
     
     resultStr += `<p>Hours: ${hours}</p><p>Minutes: ${minutes}</p><p>Seconds: ${secondsTmp}</p>`;
+
+    setBlock('hours', hours);
+    setBlock('minutes', minutes);
+    setBlock('seconds', secondsTmp);
 
     document.getElementById('resultCountdown').innerHTML = resultStr;
     seconds--;
 
     countdownID = setTimeout(countdownTick, 1000);
+}
+
+function setBlock(blockName, value)
+{
+    document.getElementById(`block-${blockName}`).style.display = 'block';
+    document.getElementById(`${blockName}-unit`).innerHTML = value;
 }
 
 function countdownStop()
@@ -94,6 +119,13 @@ function countdownStop()
         document.getElementById('resultCountdown').innerHTML = "";
         document.getElementById('btnStart').disabled = false;
         document.getElementById('targetDate').disabled = false;
+
+        document.getElementById('block-years').style.display = 'none';
+        document.getElementById('block-months').style.display = 'none';
+        document.getElementById('block-days').style.display = 'none';
+        document.getElementById('block-hours').style.display = 'none';
+        document.getElementById('block-minutes').style.display = 'none';
+        document.getElementById('block-seconds').style.display = 'none';
     }
 }
 

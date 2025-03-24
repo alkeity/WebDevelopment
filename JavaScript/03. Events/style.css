@@ -53,6 +53,38 @@ div
     transition: all 1s;
 }
 
+.time-blocks
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.time-block
+{
+    display: none;
+    padding: 0;
+    margin-right: 20px;
+    width: 100px;
+    height: 120px;
+    background-color: cadetblue;
+    color: lightgoldenrodyellow;
+    text-align: center;
+    border: 2px solid cadetblue;
+    border-radius: 10px;
+}
+
+.time-unit
+{
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.time-marker
+{
+    margin-top: 20px;
+}
+
 #change-theme
 {
     margin-left: auto;
