@@ -85,6 +85,13 @@ div
     margin-top: 20px;
 }
 
+.small-img
+{
+    height: 20%;
+    width: 20%;
+    display: block;
+}
+
 #change-theme
 {
     margin-left: auto;
