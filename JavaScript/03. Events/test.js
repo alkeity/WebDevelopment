@@ -1,6 +1,7 @@
 function test()
 {
     let result = 0;
+    let checked = 0;
 
     for (let i = 1; i <= 5; i++)
     {
@@ -10,8 +11,14 @@ function test()
             if (answers[j].checked)
             {
                 result += Number(answers[j].value);
+                checked++;
                 break;
             }
+        }
+        if (checked != i)
+        {
+            document.getElementById('result').innerHTML = 'check radio buttons pls';
+            return;
         }
     }
 
