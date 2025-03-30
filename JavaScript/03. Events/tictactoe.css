@@ -1,0 +1,45 @@
+body
+{
+    background-color: snow;
+    font-family: "Roboto", sans-serif;
+}
+
+h1
+{
+    text-align: center;
+}
+
+.container
+{
+    margin: auto;
+    width: 60%;
+}
+
+#board
+{
+    margin: auto;
+    padding: 0;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#result
+{
+    text-align: center;
+    font-size: large;
+}
+
+.board-square
+{
+    margin: 0;
+    aspect-ratio: 1 / 1;
+    width: 32%;
+    border: 2px solid black;
+    font-size: 5cqw;
+    line-height: 100%;
+    text-align: center;
+    align-content: center;
+}
