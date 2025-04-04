@@ -1,0 +1,26 @@
+[
+  {
+    "type": "Human",
+    "last_name": "Montana",
+    "first_name": "Antonio",
+    "age": 70
+  },
+  {
+    "type": "Student",
+    "last_name": "Pinkman",
+    "first_name": "Jessie",
+    "age": 80,
+    "speciality": "Chemistry",
+    "group": "WW_220",
+    "rating": 90,
+    "attendance": 99
+  },
+  {
+    "type": "Teacher",
+    "last_name": "White",
+    "first_name": "Walter",
+    "age": 90,
+    "speciality": "Chemistry",
+    "experience": 25
+  }
+]
